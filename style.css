@@ -510,7 +510,7 @@ html, body {
 
 #editor textarea {
   position: absolute;
-  top: 7%;
+  top: 9%;
   left: 0;
   word-break: break-all;
   width: 100%;

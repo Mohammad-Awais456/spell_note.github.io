@@ -284,8 +284,8 @@ html, body {
   background: rgba(0, 0, 0, 0.494);
   color: white;
   padding: 1rem 2rem;
-  -webkit-box-shadow: 1px 0px 11px #1f1c1c, inset 1px 2px 28px black;
-          box-shadow: 1px 0px 11px #1f1c1c, inset 1px 2px 28px black;
+  -webkit-box-shadow: 1px 0px 11px #464646, inset 1px 2px 28px black;
+          box-shadow: 1px 0px 11px #464646, inset 1px 2px 28px black;
 }
 
 .note_section_header {
@@ -499,7 +499,7 @@ html, body {
 #editor {
   position: fixed;
   width: 95vw;
-  height: 95vh;
+  height: 90vh;
   -webkit-transition: 1s;
   transition: 1s;
   top: 50%;

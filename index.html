@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html id="html" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/jpg" href="./images/icon.png"/>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./preloader.css">
+    <title>Notes</title>
+</head>
+
+<body onload="disable_prelaoder()">
+
+
+
+    <!-- preloader  -->
+    
+
+<div class="zhigh" style="z-index: 234234234234234234234;" id="pre_main">
+    <div id="pre_inner">
+
+<span id="span_prea" class="pre_span">
+
+</span>
+
+<span id="span_preb" class="pre_span">
+
+</span>
+
+<span id="span_prec" class="pre_span"></span>
+
+    </div>
+    <div class="preloader_heading_main">
+        <h2 class="preloader_heading">
+            Loading 
+            <span  id="dota" class="dot">.</span>
+            <span id="dotb"  class="dot">.</span>
+            <span  id="dotc" class="dot">.</span>
+
+        </h2>
+    </div>
+
+</div>
+
+    <!-- preloader  -->
+
+<!-- setting div starting -->
+
+<span id="setting_img_div">
+    <i class="fas fa-cog"></i>
+</span>
+
+<!-- setting div ending -->
+
+<!-- themes  -->
+<div class="onone"  id="theme_outer">
+
+    <h1>Themes</h1>
+    <div id="theme_closer" >
+
+        <i class="far fa-times-circle"></i>
+    </div>
+    <div id="theme_inner">
+
+
+<div class="theme_img_div">
+    <img src="./images/b1.jpg" alt="">
+</div>
+<div class="active theme_img_div">
+    <img src="./images/b2.jpg" alt="">
+</div>
+<div class="theme_img_div">
+    <img src="./images/b3.jpg" alt="">
+</div>
+<div class="theme_img_div">
+    <img src="./images/b4.jpg" alt="">
+</div>
+<div class="theme_img_div">
+    <img src="./images/b5.jpg" alt="">
+</div>
+<div class="theme_img_div">
+    <img src="./images/b6.jpg" alt="">
+</div>
+
+    </div>
+</div>
+
+<!-- themes  -->
+
+
+
+
+
+<!-- father div starting  -->
+
+
+    <div class="main_father">
+
+    <div id="background">
+    </div>
+  
+
+<div class="znone" id="editor">
+<div class="editor_btn_paren">
+
+    
+    <button class="btn open" id="toggle_btn" >create</button>
+    <button class="delete btn " id="exit_btn">exit</button>
+</div>
+
+<div id="textarea_parent" class="zhigh">
+<input type="text" placeholder="Title"  id="input_title" class=" border_outline_none">
+<textarea placeholder="Write your ideas..." name="textarea" class="border_outline_none" id="textarea" ></textarea>
+
+
+</div>
+
+<div class="znone" id="read_only">
+
+<div class="read_title"></div>
+<div class="read_content"></div>
+
+</div>
+
+</div>
+
+
+<!-- layer  -->
+<div class="znone" id="layer"></div>
+<!-- layer  -->
+    <!-- body starting  -->
+    <!-- nav bar starting  -->
+    <nav class="rflex_center_nowrap" id="navbar">
+
+
+        <ul id="ul" class="rflex_between_nowrap">
+            <span id="logo_parent_div">
+                <img src="./images/icon.png" alt="logo" id="logo">
+            </span>
+
+            <input autocomplete="off" type="search" class="border_outline_none" name="search" placeholder="find by tile or content"
+                id="search_tag">
+        </ul>
+
+
+    </nav>
+    <!-- nav bar ending  -->
+    <!-- add note  section  Start-->
+    <section class="rflex_center_nowrap" id="add_note_parent">
+
+        <button id="add_note_btn" class="btn border">Note <i class="fas fa-plus"></i></button>
+
+    </section>
+
+    <!-- add note  section  end-->
+    <!-- ************************************************ -->
+    <!-- add note  section  Start-->
+    <h1 class="rflex_center_nowrap note_section_header">
+        Notes
+    </h1>
+    <section   class="cflex_center_nowrap" id="note_section">
+        <div class="rflex_center_wrap" id="notes_container">
+
+         
+           
+         
+         
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+    </section>
+
+    <!-- add note  section  end-->
+    <!-- ************************************************ -->
+
+
+
+    
+    
+    <!-- footer starting  -->
+
+        <footer id="footer" class="cflex_center_nowrap" style=" padding: 17px 0px;     background-color: #0a0a0aa6!important;">
+            
+            <h3>CopyRight© reserved 2021</h3>
+            <h6>Created by: Mohammad Awais</h6>
+            
+        </footer>
+    <!-- footer ending  -->
+        
+    </div>
+    <!-- body ending  -->
+    
+    <script src="./script.js"></script>
+    
+</body>
+<script >
+    function disable_prelaoder(){
+document.getElementById("pre_main").classList.add("dnone");
+    }
+</script>
+</html>

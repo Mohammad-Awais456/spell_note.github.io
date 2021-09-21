@@ -359,6 +359,7 @@ html, body {
 .note .content {
   padding-top: 1rem;
   font-size: 1.5rem;
+  white-space: pre-line;
 }
 
 .note::after {
@@ -494,6 +495,7 @@ html, body {
 .read_content {
   height: 90%;
   overflow-y: scroll !important;
+  white-space: pre;
 }
 
 #editor {
@@ -771,7 +773,6 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: none !important;
   -webkit-text-fill-color: white;
-  -webkit-box-shadow: none;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }

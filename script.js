@@ -148,14 +148,18 @@ function exit_editor() {
 }
 // *********************************************
 function delete_note(index, c = true) {
+let conf=confirm("Delete note?....!!!");
+// console.log(conf);
+if(conf)
+{
 
-    console.log("log");
     let d = get_local_storage_data();
     d.splice(index, 1);
-
+    
     set_local_storage_data(d);
-
+    
     display_notes();
+}
 
 
 }

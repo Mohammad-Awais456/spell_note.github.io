@@ -349,6 +349,7 @@ function show_query_result() {
 // themes javascritp 
 let theme = document.querySelectorAll(".theme_img_div");
 
+let theme_length=theme.length;
 
 theme.forEach((element, i, ob) => {
 
@@ -366,7 +367,7 @@ function theme_changer(t) {
 
 
     theme[t].classList.add("active");
-    for (let i = 0; i < 6; i++) 
+    for (let i = 0; i < theme_length; i++) 
     {
         if(i!=t)
         {

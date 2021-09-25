@@ -143,8 +143,17 @@ html,body{
     transition: 0.5s;
     height: auto;
 }
-.scale{
+.scale:hover{
     transform: scale(1.1);
+}
+@media only screen and (max-width:700px) {
+    
+    .scale:hover{
+        transform: scale(1) !important;
+    }
+}
+
+.scale{
     
     transition: 0.5s;
     
@@ -280,7 +289,7 @@ transition: 0.5s;
     overflow: hidden;
     margin: 1rem;
 .title{
-    font-size: 2rem;
+    font-size: 1.5rem;
     border-bottom: 1px solid white;
     padding-bottom: 0.5rem;
     
@@ -288,7 +297,7 @@ transition: 0.5s;
 
 .content{
     padding-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
 white-space: pre-line;
 }
 

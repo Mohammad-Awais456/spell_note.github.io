@@ -234,9 +234,19 @@ html, body {
   height: auto;
 }
 
-.scale {
+.scale:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
+}
+
+@media only screen and (max-width: 700px) {
+  .scale:hover {
+    -webkit-transform: scale(1) !important;
+            transform: scale(1) !important;
+  }
+}
+
+.scale {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -366,14 +376,14 @@ html, body {
 }
 
 .note .title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-bottom: 1px solid white;
   padding-bottom: 0.5rem;
 }
 
 .note .content {
   padding-top: 1rem;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   white-space: pre-line;
 }
 

@@ -277,13 +277,13 @@ transition: 0.5s;
     cursor: pointer;
 }
 .note{ 
-    box-shadow: 1px 0px 12px black, inset 1px 0px 28px #353535b3;
+    box-shadow: 0px 0px 1px #000000f7, inset 1px 0px 28px #000000;
     transition: 0.5s;
     width: 23rem;
     border-radius: 5px;
     padding: 1rem 1rem;
     height: 17.3rem;
-    background: #0000009e;
+    background: #156b6b0d;
     word-break: break-all;
     position: relative;
     overflow: hidden;

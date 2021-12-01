@@ -172,8 +172,21 @@ html,body{
 
 
 // navbar starting 
-
-
+.logo_bars{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+        color: white;
+        margin: 0 0.5rem;
+        font-size: 2.5rem;
+    }
+}
 
 #navbar{
 
@@ -181,14 +194,35 @@ z-index: 2;
 width: 100%;
 height: auto;
 background-color: transparent;
-
-
+display: flex;
+justify-items: center;
+padding: 1rem 0.2rem;
+background-color: rgba(0, 0, 0, 0.541);
 }
 #ul{
     position: relative;
-    background-color: rgba(0, 0, 0, 0.541);
-    width: 60rem;
+    margin-left: auto;
+    display: flex;
+    justify-items: center;
+    align-items: center;
     padding: 0.5rem;
+    li {
+        color: rgba(255, 255, 255, 0.514);
+        margin: 0 1rem;
+        font-size: 2rem;
+        transition: 0.5s;
+        padding-bottom:0.3rem ;
+        cursor: pointer;
+        &:hover{
+           border-bottom: 1px solid rgba(255, 255, 255, 0.514);
+        }
+    }
+   
+    input{
+        margin: 0 1rem;
+            width: 25rem;
+    }
+
 
 input{
     font-size: 1.5rem;
@@ -206,6 +240,45 @@ input{
 
 width: 4rem;
 
+}
+.hidden{
+    opacity: 1;
+}
+.dul_none{
+    display: flex;
+}
+@media only screen and (max-width:750px) 
+{
+    .hidden{
+        opacity: 0;
+    }
+    .dul_none{
+        display: none !important;
+    }
+    #navbar{
+        flex-direction: column;
+        ul{
+            transition: 1s;
+            flex-direction: column;
+              margin: 0;
+              width: 100%;
+          
+              li{
+                  margin: 2rem 0;
+              }
+              input{
+                  width:90%;
+              }
+        }
+    }
+    .logo_bars{
+        width: 100%;
+        justify-content: flex-start;
+        .bars{
+            margin-left: auto;
+            display: block !important;
+        }
+    }
 }
 
 // navbar ending 
@@ -594,21 +667,21 @@ button{
 // editor
 // *********************************************************************************
 // themes setting 
-#setting_img_div i{
-    position: fixed;
-    font-size: 4rem;
-    opacity: 0.5;
-    top: 1rem;
-    left: 1rem;
-    background: none;
-    z-index: 23;
-    font-weight: 100;
-    color: #7aafaa;
-    &:hover{
-        transform: scale(1.1);
-        cursor: pointer;
-    }
-}
+// #setting_img_div i{
+//     position: fixed;
+//     font-size: 4rem;
+//     opacity: 0.5;
+//     top: 1rem;
+//     left: 1rem;
+//     background: none;
+//     z-index: 23;
+//     font-weight: 100;
+//     color: #7aafaa;
+//     &:hover{
+//         transform: scale(1.1);
+//         cursor: pointer;
+//     }
+// }
 
 #theme_outer{
 position: fixed;
@@ -744,8 +817,67 @@ select:-webkit-autofill:focus {
             color: white;
             font-size: 3rem;}
 }
-// medai quersis 
+//......................................
+@import "sign_up";
+@import "Sign_in";
+@import "Forget";
 
+// medai quersis 
+//alert code
+#alert_container{
+    transition: 0.5s;
+&:hover{
+    background-color: #3b4444;
+    
+}
+    position: fixed;
+    z-index: 2354;
+    max-width: 500px;
+    min-width: 300px;
+    padding: 3rem;
+    background-color: #000000bf;
+    border-radius: 48px 10px 48px 10px;
+    left: 50%;
+    top: -50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    letter-spacing: 0.2rem;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+        
+        h1{font-size: 2rem;margin-bottom: 1rem; color: white; letter-spacing: 0.2rem;}
+    .alert{
+        width: 100%;
+        font-size: 1.5rem;
+        text-align: center;
+        color: white;
+        letter-spacing: 0.2rem;
+    }
+span{
+    font-size: 2rem;
+    position: absolute;
+    top: 0%;
+    right: 1%;
+    border-radius: 100%;
+    color: white;
+    z-index: 2323434;
+    cursor: pointer;
+
+}
+
+}
+
+
+@media only screen and (max-width:350px) 
+{
+#alert_container{
+    min-width: 90%;
+}
+    
+}
 // common responsive medaia 
 .main_father{
     display: flex;
@@ -756,7 +888,9 @@ select:-webkit-autofill:focus {
 footer{
     margin-top: auto !important;
 }
-
+.z_extra_high{
+    z-index: 3434345345345345345345345345345 !important;
+}
     @media only screen and(min-width:1400px) and(max-width:1500px){
     
     html{

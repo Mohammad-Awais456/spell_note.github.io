@@ -1,0 +1,121 @@
+
+{{>head}}
+<body onload="disable_prelaoder()">
+
+
+
+    <!-- preloader  -->
+    
+{{>preloader}}
+
+
+    <!-- preloader  -->
+
+<!-- setting div starting -->
+
+{{!-- <span id="setting_img_div">
+    <i class="fas fa-cog"></i>
+</span> --}}
+
+<!-- setting div ending -->
+
+<!-- themes  -->
+{{>themes}}
+
+<!-- themes  -->
+
+
+
+
+
+<!-- father div starting  -->
+
+
+<div class="main_father">
+
+    <div id="background">
+    </div>
+  
+
+<div class="znone" id="editor">
+<div class="editor_btn_paren">
+
+    
+    <button class="btn open" id="toggle_btn" >create</button>
+    <button class="delete btn " id="exit_btn">exit</button>
+</div>
+
+<div id="textarea_parent" class="zhigh">
+<input type="text" placeholder="Title"  id="input_title" class=" border_outline_none">
+<textarea placeholder="Write your ideas..." name="textarea" class="border_outline_none" id="textarea" ></textarea>
+
+
+</div>
+
+<div class="znone" id="read_only">
+
+<div class="read_title"></div>
+<div class="read_content"></div>
+
+</div>
+
+</div>
+
+
+<!-- layer  -->
+<div class="znone" id="layer"></div>
+<!-- layer  -->
+    <!-- body starting  -->
+    <!-- nav bar starting  -->
+    {{>navbar}}
+    <!-- nav bar ending  -->
+    <!-- add note  section  Start-->
+    <section class="rflex_center_nowrap" id="add_note_parent">
+
+        <button id="add_note_btn" class="btn border">Note <i class="fas fa-plus"></i></button>
+
+    </section>
+
+    <!-- add note  section  end-->
+    <!-- ************************************************ -->
+    <!-- add note  section  Start-->
+    <h1 class="rflex_center_nowrap note_section_header">
+        Notes
+    </h1>
+    <section   class="cflex_center_nowrap" id="note_section">
+        <div class="rflex_center_wrap" id="notes_container">
+
+         
+           
+         
+         
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+    </section>
+
+    <!-- add note  section  end-->
+    <!-- ************************************************ -->
+
+<div id="alert_container" class="z_extra_high">
+<h1>Alert</h1>
+<div class="alert">
+
+</div>
+<span id="close_alert">
+✖
+</span>
+</div>
+
+    {{>register}}
+    {{>Sign_in}}
+    {{>footer}}

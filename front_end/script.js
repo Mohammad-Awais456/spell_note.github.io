@@ -1,10 +1,61 @@
+let layer = document.querySelector('#layer');
 //global  variables 
+let user;
+let  Register_form = document.getElementById("Register_form");
+let  register_verification = document.getElementById("register_verification");
+let  register_verification_input = document.getElementById("register_verification_input");
+let  register_verification_btn = document.getElementById("register_verification_btn");
+let  register_btn = document.getElementById("register_btn");
+
+
+
 
 let t_address_opened_note;
 const empty = `<h1 id="empty">EMPTY...</h1>`;
+let close_alert= document.getElementById("close_alert");
+let alert_container= document.getElementById("alert_container");
+async function request_db_token(root,type)
+{
+    let res=await fetch(root,{
+        method:type,
+        headers:{Accept:"application/json","Content-Type":"application/json"},
+        credentials:"include"
+    })
+    res = await res.json();
+    return res;
+}    
+async function request_db(root,type,data)
+{
+    let res=await fetch(root,{
+        method:type,
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify(data)
+    })
+    res = await res.json();
+    return res;
+}    
 
+close_alert.onclick=()=>{
+    alert_container.style.cssText="top:-50%;";
+    layer.classList.add("znone");
+    layer.classList.remove("z_extra_high");
+}
+let alert_div=document.querySelector(".alert");
+function show_alert (message){
+    layer.classList.remove("znone");
+    layer.classList.add("z_extra_high");
+    alert_container.style.cssText="top:50%;";
+    alert_div.innerHTML=message;
+}
+
+
+
+let register_user= document.getElementById("register_user");
+let toggle_sign_logout= document.getElementById("toggle_sign_logout");
+let sign_in_container= document.querySelector(".sign_in_container");
 //global  variables 
 // variables 
+let ul = document.getElementById('ul')
 let search_tag = document.getElementById('search_tag')
 let note_parent = document.getElementById('note_section')
 let notes_container = document.getElementById('notes_container')
@@ -12,8 +63,10 @@ let textarea = document.getElementById('textarea')
 let input_title = document.getElementById('input_title')
 let textarea_parent = document.getElementById('textarea_parent')
 
+let close_form = document.querySelector('#close_form');
+let register_container = document.querySelector('.register_container');
+let bars = document.querySelector('.bars');
 let editor_div = document.querySelector('#editor');
-let layer = document.querySelector('#layer');
 let read_only = document.querySelector('#read_only');
 let read_title = document.querySelector('.read_title');
 let read_content = document.querySelector('.read_content');
@@ -387,6 +440,13 @@ function theme_displayer() {
 
     if(th!=null)
 {
+    let form_background=`background:linear-gradient(rgb(0 0 0 / 81%), rgb(0 0 0 / 79%)), url(./images/b${+(th)+1}.jpg);    background-position: center;
+background-size: cover !important;
+background-repeat: no-repeat !important;
+width: 100% !important;
+height: 100% !important;
+position: fixed !important;
+`;
     background_theme.style.cssText=`background:linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.548)), url(./images/b${+(th)+1}.jpg);    background-position: center;
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -394,7 +454,8 @@ function theme_displayer() {
     height: 100vh !important;
     position: fixed !important;
     z-index: -22 !important;`;
-
+    register_container.style.cssText=form_background;
+    sign_in_container.style.cssText=form_background;
     layer.style.cssText=`background:linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.548)), url(./images/b${+(th)+1}.jpg);    top: 0;
     position: fixed !important;
     left: 0 !important;
@@ -414,6 +475,13 @@ else
     height: 100vh !important;
     position: fixed !important;
     z-index: -22 !important;`;
+    register_container.style.cssText=`background:linear-gradient(rgb(0 0 0 / 81%), rgb(0 0 0 / 79%)), url(./images/b1.jpg);    background-position: center;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    width: 100% !important;
+    height: 100% !important;
+    position: fixed !important;
+    `;
     
     layer.style.cssText=`background:linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.548)), url(./images/b1.jpg);    top: 0;
     position: fixed !important;
@@ -454,7 +522,32 @@ theme_outer.classList.add("onone");
 });
 
 
+let bar_condition=true;
+bars.addEventListener("click",()=>{
 
+    bars.classList.toggle("fa-bars");
+    bars.classList.toggle("fa-times");
+    
+    
+    if(bar_condition)                                
+    {
+        bar_condition= !bar_condition;
+       ul.classList.toggle("dul_none");
+       setTimeout(()=>{
+            ul.classList.toggle("hidden");
+            
+
+    },200)
+}else{
+    bar_condition= !bar_condition;
+    ul.classList.toggle("hidden");
+    setTimeout(()=>{
+        ul.classList.toggle("dul_none");
+         
+
+ },900)
+}
+});
 
 (
     function (){
@@ -463,3 +556,105 @@ theme_outer.classList.add("onone");
         theme_changer(+(th));
     }
 )();
+
+
+toggle_sign_logout.addEventListener("click",()=>{
+   let text = toggle_sign_logout.innerHTML;
+   text = text.trim();
+//    console.log(text);
+   if(text == "Sign In")
+   {
+    sign_in_container.classList.add("zhigh");
+    sign_in_container.classList.remove("znone");
+    }
+    else{
+       alert("Sign Out");
+
+   }
+})
+register_user.addEventListener("click",()=>{
+    register_container.classList.add("zhigh");
+    register_container.classList.remove("znone");
+})
+close_form.addEventListener("click",()=>{
+    register_container.classList.add("znone");
+    register_container.classList.remove("zhigh");
+    Register_form.classList.remove("dnone");
+    register_verification.classList.add("dnone");
+    user="";
+})
+close_form_signin.addEventListener("click",()=>{
+    sign_in_container.classList.add("znone");
+    sign_in_container.classList.remove("zhigh");
+})
+
+// form validation starting here 
+
+
+
+
+
+Register_form.onsubmit=(e)=>e.preventDefault();
+register_verification.onsubmit=(e)=>e.preventDefault();
+
+register_btn.addEventListener("click",async ()=>{
+    let input=document.querySelectorAll(".register_input");
+     user= {
+        name:input[0].value,
+        email:input[1].value,
+        password:input[2].value,
+        c_password:input[3].value
+    }
+    if(user.password !=user.c_password)
+    {
+       
+        show_alert("Password & Conform Password must be same !");
+    }
+    else if(!user.name || !user.c_password || !user.email || !user.password)
+    {
+        show_alert("Empty Fields not allowed !");
+        
+    }else if(user.password.length <5 || user.password.length > 15)
+    {
+        show_alert("Password length must be between 5 to 15 characters long");
+
+    }else{
+        
+        let res= await request_db("/check_avaiable_mail","POST",user);
+        if(res.status==true)
+        {
+            show_alert(res.message);
+    input.forEach((v,i)=>input[i].value="");
+    Register_form.classList.add("dnone");
+    register_verification.classList.remove("dnone");
+        }else{
+            show_alert(res.message);
+
+        }
+
+    }
+  
+
+ })
+
+
+ register_verification_btn.addEventListener("click",async ()=>{
+     let code =register_verification_input.value;
+     user={...user,code};
+     let res= await request_db("/compare_code","POST",user);
+     if(res.status==true)
+     {
+         show_alert(res.message);
+         register_verification_input.value="";
+         register_container.classList.add("znone");
+         register_container.classList.remove("zhigh");
+         Register_form.classList.remove("dnone");
+         register_verification.classList.add("dnone");
+         user="";
+
+
+     }else{
+         show_alert(res.message);
+
+     }
+ })

@@ -256,18 +256,79 @@ html, body {
   transition: 0.5s;
 }
 
+.logo_bars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo_container h1 {
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 2.5rem;
+}
+
 #navbar {
   z-index: 2;
   width: 100%;
   height: auto;
   background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  padding: 1rem 0.2rem;
+  background-color: rgba(0, 0, 0, 0.541);
 }
 
 #ul {
   position: relative;
-  background-color: rgba(0, 0, 0, 0.541);
-  width: 60rem;
+  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0.5rem;
+}
+
+#ul li {
+  color: rgba(255, 255, 255, 0.514);
+  margin: 0 1rem;
+  font-size: 2rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-bottom: 0.3rem;
+  cursor: pointer;
+}
+
+#ul li:hover {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.514);
+}
+
+#ul input {
+  margin: 0 1rem;
+  width: 25rem;
 }
 
 #ul input {
@@ -297,6 +358,57 @@ html, body {
 
 #logo {
   width: 4rem;
+}
+
+.hidden {
+  opacity: 1;
+}
+
+.dul_none {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 750px) {
+  .hidden {
+    opacity: 0;
+  }
+  .dul_none {
+    display: none !important;
+  }
+  #navbar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #navbar ul {
+    -webkit-transition: 1s;
+    transition: 1s;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0;
+    width: 100%;
+  }
+  #navbar ul li {
+    margin: 2rem 0;
+  }
+  #navbar ul input {
+    width: 90%;
+  }
+  .logo_bars {
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .logo_bars .bars {
+    margin-left: auto;
+    display: block !important;
+  }
 }
 
 #add_note_parent {
@@ -671,24 +783,6 @@ html, body {
   height: 4.4rem;
 }
 
-#setting_img_div i {
-  position: fixed;
-  font-size: 4rem;
-  opacity: 0.5;
-  top: 1rem;
-  left: 1rem;
-  background: none;
-  z-index: 23;
-  font-weight: 100;
-  color: #7aafaa;
-}
-
-#setting_img_div i:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  cursor: pointer;
-}
-
 #theme_outer {
   position: fixed;
   top: 0%;
@@ -831,6 +925,255 @@ select:-webkit-autofill:focus {
   }
 }
 
+.register_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: fixed;
+  background-color: black;
+  z-index: 343434;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.register_container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: transparent;
+  width: 33rem;
+}
+
+.register_container form h1 {
+  color: white;
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+.register_container form input {
+  border: 1px solid white;
+  padding: 1.5rem 1rem;
+  font-size: 1.8rem;
+  width: 100%;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  color: white;
+  margin: 1rem 0;
+  background: transparent;
+  border-radius: 3rem;
+}
+
+.register_container form input:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.register_container form .form_btn {
+  max-width: 17rem;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.register_container i {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  color: white;
+  font-size: 3rem;
+}
+
+.register_container i:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+@media only screen and (max-width: 380px) {
+  .register_container form {
+    width: 90%;
+  }
+}
+
+.sign_in_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: fixed;
+  background-color: black;
+  z-index: 343434;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sign_in_container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: transparent;
+  width: 33rem;
+}
+
+.sign_in_container form h1 {
+  color: white;
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+.sign_in_container form input {
+  border: 1px solid white;
+  padding: 1.5rem 1rem;
+  font-size: 1.8rem;
+  width: 100%;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  color: white;
+  margin: 1rem 0;
+  background: transparent;
+  border-radius: 3rem;
+}
+
+.sign_in_container form input:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.sign_in_container i {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  color: white;
+  font-size: 3rem;
+}
+
+.sign_in_container i:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.form_btn {
+  max-width: 17rem;
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 380px) {
+  .sign_in_container form {
+    width: 90%;
+  }
+}
+
+#alert_container {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: fixed;
+  z-index: 2354;
+  max-width: 500px;
+  min-width: 300px;
+  padding: 3rem;
+  background-color: #000000bf;
+  border-radius: 48px 10px 48px 10px;
+  left: 50%;
+  top: -50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: white;
+  letter-spacing: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#alert_container:hover {
+  background-color: #3b4444;
+}
+
+#alert_container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: white;
+  letter-spacing: 0.2rem;
+}
+
+#alert_container .alert {
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+  letter-spacing: 0.2rem;
+}
+
+#alert_container span {
+  font-size: 2rem;
+  position: absolute;
+  top: 0%;
+  right: 1%;
+  border-radius: 100%;
+  color: white;
+  z-index: 2323434;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 350px) {
+  #alert_container {
+    min-width: 90%;
+  }
+}
+
 .main_father {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -845,6 +1188,10 @@ select:-webkit-autofill:focus {
 
 footer {
   margin-top: auto !important;
+}
+
+.z_extra_high {
+  z-index: 3434345345345345345345345345345 !important;
 }
 
 @media only screen and (min-width: 1400px) and (max-width: 1500px) {

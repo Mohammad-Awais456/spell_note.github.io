@@ -292,7 +292,7 @@ function editor_empty() {
 function display_notes() {
     let arr = [];
     let cond = localStorage.getItem("note_array");
-console.log("cond :",cond);
+// console.log("cond :",cond);
     if (cond == null) {
         notes_container.innerHTML = empty;
 
@@ -340,7 +340,7 @@ console.log("cond :",cond);
 
 
 }
-// display_notes();
+display_notes();
 
 // *********************************************
 function save_create_note(temp_index = null) {

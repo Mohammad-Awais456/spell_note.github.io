@@ -296,9 +296,8 @@ background: rgba(0, 0, 0, 0.494);
 color: rgb(255, 255, 255);
 padding: 1rem 2rem;
 }
-    //  background: radial-gradient( #000000e8, #00000024);
 
-// add btn section ending ............ 
+
 // *********************************************************************************
 // note section starting 
 .note_section_header{
@@ -827,7 +826,7 @@ select:-webkit-autofill:focus {
 #alert_container{
     transition: 0.5s;
 &:hover{
-    background-color: #3b4444;
+    background-color: #000000e3;
     
 }
     position: fixed;
@@ -982,3 +981,15 @@ footer{
     }
     
     }
+
+    input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+    background-color: rgba(255, 255, 255, 0) !important;
+    color: rgb(255, 255, 255) !important;
+    border: 1px solid white !important;
+    -webkit-box-shadow: 0 0 0 1000px rgb(255, 255, 255) inset !important;
+    -webkit-text-fill-color: #2a2929 !important;
+    transition: 0.5s;
+}

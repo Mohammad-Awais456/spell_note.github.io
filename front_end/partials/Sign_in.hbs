@@ -1,26 +1,34 @@
 <div class="sign_in_container znone">
-    <form  method="post">
+    <form id="sign_in_form"  method="post">
         <h1>Sign In</h1>
-        <input type="email" name="email" placeholder="Email">
-        <input type="password" name="Conform Password" placeholder="Password">
-        <input type="submit" class="form_btn" value="Sign In">
+        <input  autocomplete="off" type="email" id="sign_in_email_field" name="email" placeholder="Email">
+        <input  autocomplete="off" type="password" name="Password" id="sign_in_pass_field" placeholder="Password">
+        <input type="submit" class="form_btn" id="sign_in_form_btn" value="Sign In">
+        <h3 id="forget_btn">Forget Password</h3>
 
     </form>
 
  {{!-- forget --}}
 
-    <form class="dnone"  method="post">
+    <form class="dnone"  id="forget_form" method="post">
         <h1>Forget Password</h1>
-        <input type="email" name="email" placeholder="Enter Your Email">
-        <input type="submit" class="form_btn" value="Submit">
+        <input  autocomplete="off" type="email" id="forget_form_email" name="email" placeholder="Enter Your Email">
+        <input type="submit" id="forget_form_btn" class="form_btn" value="Submit">
+
 
     </form>
 
 {{!-- verification --}}
-    <form  class="dnone" method="post">
+    <form  id="reset_password_verification" class="dnone" method="post">
         <h1>Verification</h1>
-        <input type="email" name="code" placeholder="6 Digit Code">
-        <input type="submit" class="form_btn" value="Submit">
+        <input autocomplete="off"  type="number" name="code" id="reset_pass_verifi_field"  placeholder="6 Digit Code">
+        <input type="submit" id="reset_pass_verifi_btn" class="form_btn" value="Submit">
+
+    </form>
+    <form  id="reset_password_form" class="dnone" method="post">
+        <h1>Reset Password</h1>
+        <input  autocomplete="off" type="password" name="new_password" id="new_password_field" placeholder="Enter New Password">
+        <input type="submit" id="reset_passowrd_btn" class="form_btn" value="Submit">
 
     </form>
 

@@ -10,6 +10,9 @@ const sign_up_schema=mongoose.Schema({
     c_password:{type:String},
    
     code: {type:String},
+    notes:{type:String},
+
+    
     tokens:[
         {
             token:{type:String,required:true}
@@ -36,7 +39,7 @@ sign_up_schema.pre("save",async function(next){
 // generete token 
 sign_up_schema.methods.generate_token= async function()
 {
-     let token = jwt.sign({_id:this.id},process.env.secrect_key);
+     let token = await jwt.sign({_id:this.id},process.env.secrect_key);
 
    
      this.tokens=this.tokens.concat({token:token});

@@ -1,6 +1,9 @@
+const dotenv= require("dotenv");
+dotenv.config({path:"./back_end/config.env"});
 const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
+const cookie_parser= require("cookie-parser");
 const app = express();
 const port = process.env.PORT || 5000;
 // relative paths 
@@ -14,6 +17,7 @@ let views=path.join(__dirname,"./front_end/index");
 app.use(express.json());
 app.use(express.static(css));
 app.use(express.static(front_end));
+app.use(cookie_parser());
 app.use(require("./back_end/router"));
 //______________________________________
 // set view engine

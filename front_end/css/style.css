@@ -1055,6 +1055,21 @@ select:-webkit-autofill:focus {
   width: 33rem;
 }
 
+.sign_in_container form h3 {
+  color: white;
+  font-size: 1.7rem;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-weight: 100;
+  margin: 2rem 0;
+  cursor: pointer;
+}
+
+.sign_in_container form h3:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .sign_in_container form h1 {
   color: white;
   font-size: 3rem;
@@ -1139,7 +1154,7 @@ select:-webkit-autofill:focus {
 }
 
 #alert_container:hover {
-  background-color: #3b4444;
+  background-color: #000000e3;
 }
 
 #alert_container h1 {
@@ -1273,5 +1288,18 @@ footer {
   html {
     font-size: 230%;
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+  background-color: rgba(255, 255, 255, 0) !important;
+  color: white !important;
+  border: 1px solid white !important;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-text-fill-color: #2a2929 !important;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 /*# sourceMappingURL=style.css.map */

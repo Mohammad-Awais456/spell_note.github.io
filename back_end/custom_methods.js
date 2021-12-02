@@ -34,23 +34,31 @@ async function register_user(data) {
 //**************************************************** */
 // sign in 
 async function sign_in(data) {
+    try {
+        
+    
     const { email, password } = data;
+
     let user_exits = await mern_user.findOne({ email });
-    if (email == "" || password == "") {
+    if (!email || !password) {
         return { status: false, message: "Fill all the fields" }
 
     }
     else if (user_exits) {
+
         let check = await bcryptjs.compare(password, user_exits.password);
         if (check) {
-            let token = await user_exits.generate_token();           // genereate json tokken
-                 
-            return { status: true, message: "Sign In is successful...", user_data: user_exits, token: token };
+            let token = await user_exits.generate_token();   
+       // genereate json tokken
+            return { status: true, message: `Welcome,${user_exits.name}`, user_data: user_exits,token };
         }
         else {
             return { status: false, message: "Invalid Details" }
         }
     } else { return { status: false, message: "Invalid Details" } }
+} catch (error) {
+    return { status: false, message: "Something Wrong!" }   
+}
 
 }
 async function send_message(data) {
@@ -74,26 +82,36 @@ async function send_message(data) {
 
 }
 //**************************************************** */
-async function only_author(req, res, next) {
+async function authorization(req, res, next) {
     try {
-        let token = req.cookies.jwt;
+      
+        let token = req.cookies.sign_in;
+       
         let verify_token = jwt.verify(token, process.env.secrect_key)
 
         let user = await mern_user.findOne({ _id: verify_token._id });
       
-        if (!user) { res.send({ message: "user not found ,Please sign in/up", status: false }) };
+        if (!user) { 
+            res.cond=false;
+        }else{
+            
+            res.cond=true;
+         }
 
-        res.send(user);
+      
     }
     catch (err) {
-        res.send({ message: "Something Wrong OR Please,Sign In", status: false });
+        res.render("index",{
+            toggle:"Sign In"
+       });
+        
     }
 
     next();
 
 }
 //**************************************************** */
-async function send_mail(reciver_address, code) {
+async function send_mail(reciver_address, code,subject) {
 
     var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -106,7 +124,7 @@ async function send_mail(reciver_address, code) {
     var mailOptions = {
         from: 'mohammadawais4667@gmail.com',
         to: reciver_address,
-        subject: 'Reset Password',
+        subject: subject,
         text: "6 digit code = " + code
     };
 
@@ -127,7 +145,7 @@ async function check_email(data) {
     let user_exits = await mern_user.findOne({ email });
     if (user_exits) {
         let random = Math.round(Math.random() * 500000);
-        send_mail(email, random);
+        send_mail(email, random,"Reset Code");
      
         user_exits.code = random;
         await user_exits.save();
@@ -147,6 +165,7 @@ async function compare_code(data) {
     let user = await mern_user.findOne({ email });
     if (user) {
         if (user.code == code) {
+            user.code="";
             return { message: "6 digit Code matched", status: true };
 
         }
@@ -197,7 +216,7 @@ async function check_avaiable_mail(data) {
         return { message: "Already,registerd with another account.", status: false }
     } else {
         let random = Math.round(Math.random() * 500000);
-         send_mail(email, random);
+         send_mail(email, random,"Verification Code");
         
           let temp_user_exits= await temp_email_collection.findOne({email});
           if(temp_user_exits)
@@ -218,4 +237,4 @@ async function check_avaiable_mail(data) {
 }
 //**************************************************** */
 
-module.exports = { register_user, sign_in, only_author, check_avaiable_mail, send_message, reset_pass, check_email, compare_code }
+module.exports = { register_user, sign_in, authorization, check_avaiable_mail, send_message, reset_pass, check_email, compare_code }

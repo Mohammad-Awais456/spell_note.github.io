@@ -1,5 +1,31 @@
+
 let layer = document.querySelector('#layer');
+let cond_db={
+    cond:undefined
+}
 //global  variables 
+//_________________________________________
+let forget_btn= document.getElementById("forget_btn");
+let sign_in_form= document.getElementById("sign_in_form");
+let forget_form= document.getElementById("forget_form");
+let reset_password_verification= document.getElementById("reset_password_verification");
+let reset_password_form= document.getElementById("reset_password_form");
+let forget_form_btn= document.getElementById("forget_form_btn");
+let forget_form_email= document.getElementById("forget_form_email");
+let reset_pass_verifi_btn= document.getElementById("reset_pass_verifi_btn");
+let reset_pass_verifi_field= document.getElementById("reset_pass_verifi_field");
+let new_password_field= document.getElementById("new_password_field");
+let sign_in_form_btn=document.getElementById("sign_in_form_btn");
+let sign_in_pass_field=document.getElementById("sign_in_pass_field");
+let sign_in_email_field=document.getElementById("sign_in_email_field");
+let reset_passowrd_btn= document.getElementById("reset_passowrd_btn");
+let input=document.querySelectorAll(".register_input");
+
+//_________________________________________
+
+
+
+
 let user;
 let  Register_form = document.getElementById("Register_form");
 let  register_verification = document.getElementById("register_verification");
@@ -14,6 +40,18 @@ let t_address_opened_note;
 const empty = `<h1 id="empty">EMPTY...</h1>`;
 let close_alert= document.getElementById("close_alert");
 let alert_container= document.getElementById("alert_container");
+async function request_db_token_data(root,type,data)
+{
+    let res=await fetch(root,{
+        method:type,
+        headers:{Accept:"application/json","Content-Type":"application/json"},
+        credentials:"include",
+        body: JSON.stringify(data)
+
+    })
+    res = await res.json();
+    return res;
+}    
 async function request_db_token(root,type)
 {
     let res=await fetch(root,{
@@ -210,8 +248,9 @@ if(conf)
     d.splice(index, 1);
     
     set_local_storage_data(d);
-    
+    local_to_db();
     display_notes();
+
 }
 
 
@@ -252,9 +291,8 @@ function editor_empty() {
 
 function display_notes() {
     let arr = [];
-
     let cond = localStorage.getItem("note_array");
-
+console.log("cond :",cond);
     if (cond == null) {
         notes_container.innerHTML = empty;
 
@@ -302,7 +340,7 @@ function display_notes() {
 
 
 }
-display_notes();
+// display_notes();
 
 // *********************************************
 function save_create_note(temp_index = null) {
@@ -320,6 +358,7 @@ function save_create_note(temp_index = null) {
         set_local_storage_data(local_data);
         display_notes();
         exit_editor();
+        local_to_db() 
         console.log("save function working ");
     }
     else {
@@ -332,6 +371,7 @@ function save_create_note(temp_index = null) {
 
 
         set_local_storage_data(raw_data);
+        local_to_db() ;
         display_notes();
 
 
@@ -342,7 +382,48 @@ function save_create_note(temp_index = null) {
 // functions
 
 
+// mongo db functions 
+async function db_to_local() 
+{
+    let res= await request_db_token("/get_notes","GET");
+    console.log(res);
+    if(res.status==true)
+    {
+        res.data= JSON.parse(res.data)
+        set_local_storage_data(res.data);
+       
 
+            display_notes();
+       
+
+}else{
+        display_notes();
+        console.log("somethign");
+
+    }
+    
+}
+db_to_local() ;
+//________________________________
+async function local_to_db() 
+{
+    let l_data=get_local_storage_data();
+   
+    let res= await request_db_token_data("/store_notes","POST",l_data);
+    console.log(res);
+
+    if(res.status==true)
+    {
+        console.log(res.data);
+        
+display_notes();
+
+    }else{
+        console.log("somethign");
+    }
+    
+}
+//______________________________________________ 
 
 
 function show_query_result() {
@@ -356,6 +437,7 @@ function show_query_result() {
     console.log(child_content);
     let query = search_tag.value;
     query = query.trim();
+    query= query.toLocaleLowerCase();
     if (query == "") {
 
         temp_notes_for_query.forEach((element, index) => {
@@ -366,7 +448,7 @@ function show_query_result() {
         })
     }
     else {
-        console.log(temp_notes_for_query);
+        // console.log(temp_notes_for_query);
 
         let footer = document.getElementById("footer");
         temp_notes_for_query.forEach((element, index, oj) => {
@@ -558,7 +640,7 @@ bars.addEventListener("click",()=>{
 )();
 
 
-toggle_sign_logout.addEventListener("click",()=>{
+toggle_sign_logout.addEventListener("click", async ()=>{
    let text = toggle_sign_logout.innerHTML;
    text = text.trim();
 //    console.log(text);
@@ -568,8 +650,18 @@ toggle_sign_logout.addEventListener("click",()=>{
     sign_in_container.classList.remove("znone");
     }
     else{
-       alert("Sign Out");
+    
+       let res=await request_db_token("/Sign_out","POST");
+       if(res.status==true)
+       {
+           show_alert(res.message);
+           set_local_storage_data([]);
+           window.location.reload();
+        }else{
+           show_alert(res.message);
 
+       }
+       
    }
 })
 register_user.addEventListener("click",()=>{
@@ -582,11 +674,26 @@ close_form.addEventListener("click",()=>{
     Register_form.classList.remove("dnone");
     register_verification.classList.add("dnone");
     user="";
+    input.forEach((v,i)=>input[i].value="");
+
 })
-close_form_signin.addEventListener("click",()=>{
+close_form_signin.addEventListener("click",close_sign_in_page)
+function close_sign_in_page() 
+{
     sign_in_container.classList.add("znone");
     sign_in_container.classList.remove("zhigh");
-})
+
+    sign_in_form.classList.remove("dnone");
+    forget_form.classList.add("dnone");
+    reset_password_verification.classList.add("dnone");
+    reset_password_form.classList.add("dnone");
+    sign_in_pass_field.value="";
+    sign_in_email_field.value="";
+    new_password_field.value="";
+    reset_pass_verifi_field.value="";
+    forget_form_email.value="";
+}    
+
 
 // form validation starting here 
 
@@ -596,9 +703,8 @@ close_form_signin.addEventListener("click",()=>{
 
 Register_form.onsubmit=(e)=>e.preventDefault();
 register_verification.onsubmit=(e)=>e.preventDefault();
-
+// registeration code 
 register_btn.addEventListener("click",async ()=>{
-    let input=document.querySelectorAll(".register_input");
      user= {
         name:input[0].value,
         email:input[1].value,
@@ -644,13 +750,24 @@ register_btn.addEventListener("click",async ()=>{
      let res= await request_db("/compare_code","POST",user);
      if(res.status==true)
      {
-         show_alert(res.message);
-         register_verification_input.value="";
-         register_container.classList.add("znone");
-         register_container.classList.remove("zhigh");
-         Register_form.classList.remove("dnone");
-         register_verification.classList.add("dnone");
-         user="";
+
+     let res2= await request_db("/register","POST",user);
+        if(res2.status==true)
+        {
+
+            
+            show_alert(res2.message);
+            register_verification_input.value="";
+            register_container.classList.add("znone");
+            register_container.classList.remove("zhigh");
+            Register_form.classList.remove("dnone");
+            register_verification.classList.add("dnone");
+            user="";
+        }else{
+            
+            show_alert(res2.message);
+        }
+
 
 
      }else{
@@ -658,3 +775,131 @@ register_btn.addEventListener("click",async ()=>{
 
      }
  })
+ //_________________________________________________________
+ // sign in  & forget password 
+
+
+ forget_form.onsubmit=(e)=>e.preventDefault();
+ sign_in_form.onsubmit=(e)=>e.preventDefault();
+ reset_password_form.onsubmit=(e)=>e.preventDefault();
+ reset_password_verification.onsubmit=(e)=>e.preventDefault();
+
+
+ forget_btn.addEventListener("click",show_forget_page);
+ forget_btn.addEventListener("click",show_forget_page);
+ function show_forget_page() 
+ {
+   sign_in_form.classList.add("dnone");
+   forget_form.classList.remove("dnone");
+     
+ }
+ function show_reset_pass_verification_form() 
+ {
+   sign_in_form.classList.add("dnone");
+   forget_form.classList.add("dnone");
+   reset_password_verification.classList.remove("dnone");
+   
+ }
+ function  show_reset_password_form()
+ {
+    sign_in_form.classList.add("dnone");
+    forget_form.classList.add("dnone");
+    reset_password_verification.classList.add("dnone");
+    reset_password_form.classList.remove("dnone");
+
+ }
+//********************************************** */
+forget_form_btn.addEventListener("click", async ()=>{
+let email= forget_form_email.value;
+if(!email){  show_alert("Fill all the fields !") }
+else
+{
+    let res= await request_db("/if_email_present_send_verif_code","POST",{email});
+
+       if(res.status==true)
+       {
+        show_reset_pass_verification_form();
+       }
+       else{
+           show_alert(res.message);
+       }
+}
+
+})
+ //_________________________________________________________
+ reset_pass_verifi_btn.addEventListener("click",async ()=>{
+    let email= forget_form_email.value;
+
+    let code=reset_pass_verifi_field.value;
+if(!code)
+{
+    show_alert("Fill all the fields!");
+
+}else
+{
+
+    let res= await request_db("/compare_code","POST",{email,code});
+    if(res.status==true)
+    {
+        show_reset_password_form();
+        show_alert(res.message);
+    }else{
+        show_alert(res.message);
+    }
+}
+
+
+ })
+
+ reset_passowrd_btn.addEventListener("click",async ()=>{
+    let new_password=new_password_field.value;
+    let email= forget_form_email.value;
+
+    if(!new_password)
+    {
+        show_alert("Fill all the fields!");
+    }
+    else
+    {
+    let res= await request_db("/reset_password","POST",{email,new_password});
+       if(res.status==true)
+       {
+           show_alert(res.message);
+           close_sign_in_page();
+        }else{
+
+            show_alert(res.message);
+        }
+
+    }
+ })
+
+//            sign_IN 
+
+sign_in_form_btn.addEventListener("click",async ()=>{
+
+    let email= sign_in_email_field.value;
+    let password= sign_in_pass_field.value;
+    if(!email||!password){ show_alert("Fill all the fields !")}
+    else
+    {
+        let res= await request_db("/sign_in","POST",{email,password});
+        // console.log(res);
+        if(res.status==true)
+        {
+            show_alert(res.message);
+
+            close_sign_in_page();
+           window.location.reload();
+
+        }
+        else{
+            show_alert(res.message);
+
+        }
+
+    }
+
+})
+
+ //_________________________________________________________

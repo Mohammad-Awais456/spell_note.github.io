@@ -517,7 +517,7 @@ button{
 .read_content{
     height: 90%;
     overflow-y: scroll !important;
-    white-space: pre;
+    
 }
 
 #editor{
@@ -555,7 +555,11 @@ button{
                 }
 }
 
-
+#input_title, .read_content, .read_title, #textarea {
+  
+    white-space: pre-wrap !important;
+    overflow-x: hidden;
+}
 
 
 

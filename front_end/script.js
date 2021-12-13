@@ -167,7 +167,7 @@ function toggle_btn_manager() {
         toggle_btn.innerHTML = "save";
     }
     else {
-        console.log("editor working");
+        let aaaaaa=0;
     }
 }
 
@@ -359,7 +359,7 @@ function save_create_note(temp_index = null) {
         display_notes();
         exit_editor();
         local_to_db() 
-        console.log("save function working ");
+       
     }
     else {
 
@@ -386,7 +386,7 @@ function save_create_note(temp_index = null) {
 async function db_to_local() 
 {
     let res= await request_db_token("/get_notes","GET");
-    console.log(res);
+  
     if(res.status==true)
     {
         res.data= JSON.parse(res.data)
@@ -398,7 +398,7 @@ async function db_to_local()
 
 }else{
         display_notes();
-        console.log("somethign");
+      
 
     }
     
@@ -410,16 +410,16 @@ async function local_to_db()
     let l_data=get_local_storage_data();
    
     let res= await request_db_token_data("/store_notes","POST",l_data);
-    console.log(res);
+   
 
     if(res.status==true)
     {
-        console.log(res.data);
+       
         
 display_notes();
 
     }else{
-        console.log("somethign");
+       
     }
     
 }
@@ -433,8 +433,7 @@ function show_query_result() {
     let temp_notes_for_query = document.querySelectorAll(".note");
     let child_title = document.querySelectorAll(".note > .title");
     let child_content = document.querySelectorAll(".note > .content");
-    console.log(child_title);
-    console.log(child_content);
+   
     let query = search_tag.value;
     query = query.trim();
     query= query.toLocaleLowerCase();
@@ -444,7 +443,6 @@ function show_query_result() {
 
             element.classList.remove("dnone");
             display_notes();
-            console.log("display called");
         })
     }
     else {
@@ -455,7 +453,6 @@ function show_query_result() {
 
             let content = child_content[index];
             let title = child_title[index];
-            console.log(element);
 
             content = content.innerHTML.toLocaleLowerCase();
             title = title.innerHTML.toLocaleLowerCase();

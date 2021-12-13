@@ -635,7 +635,6 @@ html, body {
 .read_content {
   height: 90%;
   overflow-y: scroll !important;
-  white-space: pre;
 }
 
 #editor {
@@ -680,6 +679,11 @@ html, body {
 
 #editor::placeholder {
   color: white;
+}
+
+#input_title, .read_content, .read_title, #textarea {
+  white-space: pre-wrap !important;
+  overflow-x: hidden;
 }
 
 #layer {

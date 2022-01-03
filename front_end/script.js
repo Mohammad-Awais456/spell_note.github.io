@@ -191,12 +191,13 @@ function get_local_storage_data() {
 // localstorage data passer 
 
 function display_editor(index_id) {
-
-    if (index_id.length == 2) {
+console.log(index_id);
+    if (index_id.length >= 2) {
         toggle_btn.innerHTML = "edit";
 
         index_id = index_id.slice(1);
         let local = get_local_storage_data();
+        console.log(index_id);
 
         t_address_opened_note = index_id;  // contain address of open note 
 

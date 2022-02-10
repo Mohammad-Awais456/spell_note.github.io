@@ -68,7 +68,8 @@
   height: 100%;
   -webkit-transition: 1s;
   transition: 1s;
-  background: linear-gradient(45deg, #2f5c2c, #222222);
+  background: linear-gradient(45deg, #2f5c2c, #044e5e);
+
   border-radius: 10px;
 }
 

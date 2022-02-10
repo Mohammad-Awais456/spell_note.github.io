@@ -22,7 +22,7 @@ async function register_user(data) {
 
             let register_user = new mern_user(data);
             const result = await register_user.save();
-            console.log("user registered");
+            // console.log("user registered");
             return { status: true, message: "Registeration is Successful" };
         } else { return { status: false, message: "Conform password & password must be same" } }
 
@@ -132,9 +132,6 @@ async function send_mail(reciver_address, code,subject) {
         if (error) {
            console.log(error);
 
-        } else {
-            console.log('Email sent');
-
         }
     });
 
@@ -145,6 +142,11 @@ async function check_email(data) {
     let user_exits = await mern_user.findOne({ email });
     if (user_exits) {
         let random = Math.round(Math.random() * 500000);
+        random= random+"";
+        random.length<6?+(random)+1:null;
+
+
+
         send_mail(email, random,"Reset Code");
      
         user_exits.code = random;
@@ -216,6 +218,8 @@ async function check_avaiable_mail(data) {
         return { message: "Already,registerd with another account.", status: false }
     } else {
         let random = Math.round(Math.random() * 500000);
+        random= random+"";
+        random.length<6?+(random)+1:null;
          send_mail(email, random,"Verification Code");
         
           let temp_user_exits= await temp_email_collection.findOne({email});

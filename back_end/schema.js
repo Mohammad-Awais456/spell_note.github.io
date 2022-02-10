@@ -28,7 +28,7 @@ const temp_email_schema= mongoose.Schema({
 sign_up_schema.pre("save",async function(next){
     if(this.isModified("password"))
     {
-        console.log("password :"+this.password);
+        // console.log("password :"+this.password);
         this.password= await bcryptjs.hash(this.password,9);
         this.c_password=undefined;
     }

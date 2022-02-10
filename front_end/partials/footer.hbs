@@ -17,8 +17,52 @@
     
 </body>
 <script >
-    function disable_prelaoder(){
-document.getElementById("pre_main").classList.add("dnone");
-    }
+     const progress_bar=document.querySelector(".loading_bar");
+     const bbody=document.getElementsByTagName("body")[0];
+   const preloader_main_container=document.querySelector(".preloader_main_container");
+   const progress_in_per=document.getElementById("loading_preloader_progress");
+   progress_bar.style.width=`0%`;
+   progress_in_per.innerHTML="0%";
+   let temp_preloader=0;
+   let temp_interval;
+  temp_interval= setInterval(()=>{
+
+       progress_bar.style.width=`${temp_preloader}%`;
+       progress_in_per.innerHTML=`${temp_preloader}%`;
+       temp_preloader++;
+
+       if(temp_preloader>=35)
+       {
+       clearInterval(temp_interval);
+           
+       }
+   },1000);
+
+  function disable_prelaoder(){
+       clearInterval(temp_interval);   // destroy the 1st interval 
+       //----------------
+      let temp_interval2;
+
+       temp_interval2 = setInterval(() => {
+
+        progress_bar.style.width=`${temp_preloader}%`;
+       progress_in_per.innerHTML=`${temp_preloader}%`;
+       if(temp_preloader>=100)
+       {
+           clearInterval(temp_interval2);
+           setTimeout(()=>{
+               bbody.classList.remove("bbody");
+               preloader_main_container.style.cssText="display:none !important;";
+           },1500);
+        }
+        
+        temp_preloader++;
+
+       }, 30);
+
+       
+   }
+
+
 </script>
 </html>

@@ -20,7 +20,7 @@ router.get("/",methods.authorization,(req,res)=>{
 })
 router.post("/store_notes",async (req,res)=>{
      try {
-          console.log("hellow store ntoes");
+          // console.log("hellow store ntoes");
       req.body =  JSON.stringify(req.body);
           let token = req.cookies.sign_in;
          
@@ -28,7 +28,7 @@ router.post("/store_notes",async (req,res)=>{
   
           let user = await mern_user.findOne({ _id: verify_token._id });
           if (!user) { 
-              res.send({status:fasle});
+              res.send({status:false});
           }else{
               user.notes= req.body;
               await user.save();
@@ -39,7 +39,7 @@ router.post("/store_notes",async (req,res)=>{
       }
       catch (err) {
          
-          res.send({status:fasle});
+          res.send({status:false});
      
           
       }
@@ -55,7 +55,7 @@ router.get("/get_notes",async (req,res)=>{
         
         
           if (!user) { 
-              res.send({status:fasle});
+              res.send({status:false});
           }else{
               
             res.send({status:true,data:user.notes});
@@ -65,7 +65,7 @@ router.get("/get_notes",async (req,res)=>{
       }
       catch (err) {
          
-          res.send({status:fasle});
+          res.send({status:false});
      
           
       }
@@ -110,12 +110,12 @@ router.post("/Sign_out",async (req ,res)=>{
      let token=req.cookies.sign_in;
      let verify_token= jwt.verify(token,process.env.secrect_key)
      let current_user=await mern_user.findOne({_id:verify_token._id});
-     console.log(current_user,"............................");
-     console.log(verify_token);
+     // console.log(current_user,"............................");
+     // console.log(verify_token);
      current_user.tokens=current_user.tokens.find((v,i)=>{
          return v.token !=token;
      })
-     console.log(current_user,"............................");
+     // console.log(current_user,"............................");
       await current_user.save();
      res.send({message:"logout Successfull",status:true});
  })

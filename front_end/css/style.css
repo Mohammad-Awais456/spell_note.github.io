@@ -2,23 +2,20 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   list-style: none !important;
   text-decoration: none !important;
   letter-spacing: 3px !important;
-  font-family: 'Kaushan Script', cursive;
+  font-family: "Kaushan Script", cursive;
 }
 
 .onone {
   opacity: 0 !important;
   z-index: -3434 !important;
-  -webkit-transition: 1s;
   transition: 1s;
 }
 
 .oshow {
-  -webkit-transition: 1s;
   transition: 1s;
   opacity: 1 !important;
   z-index: 234343 !important;
@@ -77,147 +74,72 @@ html, body {
 
 .btn:hover {
   cursor: pointer;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .rflex_center_nowrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .rflex_center_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .rflex_between_nowrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .cflex_center_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .cflex_center_nowrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .flex_row_nowrap {
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex-wrap: nowrap;
   display: flex;
   flex-wrap: nowrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
 }
 
 .flex_row_wrap {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .flex_col_wrap {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex-wrap: wrap;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .flex_col_nowrap {
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex-wrap: nowrap;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .border_outline_none {
@@ -229,57 +151,38 @@ html, body {
   width: auto;
   border: none;
   outline: none;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   height: auto;
 }
 
 .scale:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 @media only screen and (max-width: 700px) {
   .scale:hover {
-    -webkit-transform: scale(1) !important;
-            transform: scale(1) !important;
+    transform: scale(1) !important;
   }
 }
-
 .scale {
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .btn, .scale, .border_outline_none {
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .logo_bars {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .logo_container h1 {
   color: white;
   margin: 0 0.5rem;
@@ -291,8 +194,6 @@ html, body {
   width: 100%;
   height: auto;
   background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   justify-items: center;
   padding: 1rem 0.2rem;
@@ -302,56 +203,39 @@ html, body {
 #ul {
   position: relative;
   margin-left: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 0.5rem;
 }
-
 #ul li {
   color: rgba(255, 255, 255, 0.514);
   margin: 0 1rem;
   font-size: 2rem;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   padding-bottom: 0.3rem;
   cursor: pointer;
 }
-
 #ul li:hover {
   border-bottom: 1px solid rgba(255, 255, 255, 0.514);
 }
-
 #ul input {
   margin: 0 1rem;
   width: 25rem;
 }
-
 #ul input {
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   background: transparent;
-  -webkit-box-shadow: 1px 2px 12px black, inset 1px 3px 12px #31c5fe14;
-          box-shadow: 1px 2px 12px black, inset 1px 3px 12px #31c5fe14;
+  box-shadow: 1px 2px 12px black, inset 1px 3px 12px #31c5fe14;
   color: rgba(255, 255, 255, 0.514);
 }
-
-#ul input::-webkit-input-placeholder {
+#ul input::-moz-placeholder {
   color: rgba(255, 255, 255, 0.514);
 }
-
 #ul input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.514);
 }
-
-#ul input::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.514);
-}
-
 #ul input::placeholder {
   color: rgba(255, 255, 255, 0.514);
 }
@@ -365,8 +249,6 @@ html, body {
 }
 
 .dul_none {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -374,22 +256,17 @@ html, body {
   .hidden {
     opacity: 0;
   }
+
   .dul_none {
     display: none !important;
   }
+
   #navbar {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   #navbar ul {
-    -webkit-transition: 1s;
     transition: 1s;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     margin: 0;
     width: 100%;
   }
@@ -399,18 +276,16 @@ html, body {
   #navbar ul input {
     width: 90%;
   }
+
   .logo_bars {
     width: 100%;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    justify-content: flex-start;
   }
   .logo_bars .bars {
     margin-left: auto;
     display: block !important;
   }
 }
-
 #add_note_parent {
   width: 100%;
   height: 20rem;
@@ -427,19 +302,15 @@ html, body {
 .note_section_header {
   color: white;
   font-size: 5rem;
-  -webkit-box-shadow: 1px 0px 12px black, inset 0px 0px 94px #000000ad;
-          box-shadow: 1px 0px 12px black, inset 0px 0px 94px #000000ad;
+  box-shadow: 1px 0px 12px black, inset 0px 0px 94px #000000ad;
   width: 100%;
   margin-bottom: 2rem;
   border-bottom: 1px solid #ffffff57;
   border-top: 1px solid #ffffff57;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-
 .note_section_header:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 #note_section {
@@ -466,15 +337,12 @@ html, body {
 }
 
 .note:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
   cursor: pointer;
 }
 
 .note {
-  -webkit-box-shadow: 0px 0px 1px #000000f7, inset 1px 0px 28px #000000;
-          box-shadow: 0px 0px 1px #000000f7, inset 1px 0px 28px #000000;
-  -webkit-transition: 0.5s;
+  box-shadow: 0px 0px 1px #000000f7, inset 1px 0px 28px #000000;
   transition: 0.5s;
   width: 23rem;
   border-radius: 5px;
@@ -488,19 +356,16 @@ html, body {
   border-style: solid;
   margin: 1rem;
 }
-
 .note .title {
   font-size: 1.5rem;
   border-bottom: 1px solid white;
   padding-bottom: 0.5rem;
 }
-
 .note .content {
   padding-top: 1rem;
   font-size: 0.9rem;
   white-space: pre-line;
 }
-
 .note::after {
   content: "";
   position: absolute;
@@ -511,14 +376,11 @@ html, body {
   background-color: #000000af;
   z-index: 2;
   opacity: 0;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-
 .note:hover::after {
   opacity: 1;
 }
-
 .note:hover .delete_open_parent {
   opacity: 1;
 }
@@ -527,27 +389,15 @@ html, body {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   z-index: 4;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: 0.7s;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   transition: 0.7s;
   opacity: 0;
 }
-
 .delete_open_parent button {
   margin: 0 1rem;
   font-size: 1.2rem;
@@ -556,25 +406,21 @@ html, body {
   height: 4.4rem;
   letter-spacing: 1px !important;
 }
-
 .delete_open_parent .open {
   color: white;
-  -webkit-box-shadow: 1px 0px 13px #00d1fd;
-          box-shadow: 1px 0px 13px #00d1fd;
+  box-shadow: 1px 0px 13px #00d1fd;
   background: #0785c1;
 }
-
 .delete_open_parent .delete {
   color: white;
-  -webkit-box-shadow: 1px 0px 13px #fd3300;
-          box-shadow: 1px 0px 13px #fd3300;
+  box-shadow: 1px 0px 13px #fd3300;
   background: #df0404;
 }
 
 #footer {
   position: relative;
   margin-top: 15rem;
-  padding: 2rem  0rem !important;
+  padding: 2rem 0rem !important;
 }
 
 #footer h3 {
@@ -589,7 +435,6 @@ html, body {
   font-size: 1rem;
   top: 50%;
   right: 2%;
-  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   color: #969696;
 }
@@ -599,7 +444,6 @@ html, body {
     display: none !important;
   }
 }
-
 #read_only {
   position: absolute;
   top: 0%;
@@ -641,14 +485,11 @@ html, body {
   position: fixed;
   width: 95vw;
   height: 90vh;
-  -webkit-transition: 1s;
   transition: 1s;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-
 #editor textarea {
   position: absolute;
   top: 9%;
@@ -664,19 +505,12 @@ html, body {
   color: white;
   font-size: 2rem;
 }
-
-#editor::-webkit-input-placeholder {
+#editor::-moz-placeholder {
   color: white;
 }
-
 #editor:-ms-input-placeholder {
   color: white;
 }
-
-#editor::-ms-input-placeholder {
-  color: white;
-}
-
 #editor::placeholder {
   color: white;
 }
@@ -693,7 +527,6 @@ html, body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.945);
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -719,7 +552,6 @@ html, body {
 #layer {
   color: #161616;
 }
-
 #layer::after {
   content: "";
   position: absolute;
@@ -760,7 +592,6 @@ html, body {
   right: 2%;
   z-index: 23;
 }
-
 .editor_btn_paren button {
   margin: 0 1rem;
   font-size: 1.4rem;
@@ -769,18 +600,14 @@ html, body {
   width: 5rem;
   height: 5rem;
 }
-
 .editor_btn_paren .open {
   color: white;
-  -webkit-box-shadow: 1px 0px 13px #00d1fd;
-          box-shadow: 1px 0px 13px #00d1fd;
+  box-shadow: 1px 0px 13px #00d1fd;
   background: #0785c1;
 }
-
 .editor_btn_paren .delete {
   color: white;
-  -webkit-box-shadow: 1px 0px 13px #fd3300;
-          box-shadow: 1px 0px 13px #fd3300;
+  box-shadow: 1px 0px 13px #fd3300;
   background: #df0404;
   letter-spacing: 1px !important;
   width: 4.4rem;
@@ -795,28 +622,19 @@ html, body {
   height: 100%;
   background: rgba(0, 0, 0, 0.863);
   z-index: 23;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 #theme_outer h1 {
   position: absolute;
   color: white;
   font-size: 2.5rem;
   top: 12%;
   left: 50%;
-  -webkit-transform: translate(-50%, -2%);
-          transform: translate(-50%, -2%);
+  transform: translate(-50%, -2%);
   text-shadow: 1px 2px 12px #ffffff;
 }
-
 #theme_outer i {
   position: fixed;
   top: 0;
@@ -825,11 +643,9 @@ html, body {
   z-index: 2334;
   font-size: 2.5rem;
 }
-
 #theme_outer i:hover {
   cursor: pointer;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 #theme_inner {
@@ -837,32 +653,23 @@ html, body {
   height: 50%;
   overflow-y: scroll;
   overflow-x: hidden;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   background-color: rgba(255, 255, 255, 0);
 }
-
 #theme_inner .theme_img_div {
   position: relative;
   margin: 3%;
 }
-
 #theme_inner .theme_img_div img {
   width: 100%;
   height: 100%;
-  -webkit-transition: 0.6s;
   transition: 0.6s;
-  -webkit-box-shadow: 1px 2px 12px #143c42;
-          box-shadow: 1px 2px 12px #143c42;
+  box-shadow: 1px 2px 12px #143c42;
 }
-
 #theme_inner .theme_img_div img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -874,8 +681,7 @@ html, body {
   top: 0;
   left: 0;
   position: absolute;
-  -webkit-box-shadow: 1px 0px 12px #00bdf3b8, inset 0px 0px 19px #000000;
-          box-shadow: 1px 0px 12px #00bdf3b8, inset 0px 0px 19px #000000;
+  box-shadow: 1px 0px 12px #00bdf3b8, inset 0px 0px 19px #000000;
   z-index: 33;
 }
 
@@ -887,11 +693,11 @@ html, body {
     background: none;
     z-index: 23;
   }
+
   ::-webkit-scrollbar {
     width: 0px;
   }
 }
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -912,34 +718,28 @@ select:-webkit-autofill:focus {
     width: 90% !important;
   }
 }
-
 @media only screen and (max-width: 290px) {
   #ul input {
     font-size: 1.1rem;
   }
+
   #logo {
     width: 3rem;
   }
+
   #add_note_btn {
     font-size: 2.3rem;
   }
+
   .note_section_header {
     color: white;
     font-size: 3rem;
   }
 }
-
 .register_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: 0.5s;
+  justify-content: center;
+  align-items: center;
   transition: 0.5s;
   position: fixed;
   background-color: black;
@@ -949,49 +749,33 @@ select:-webkit-autofill:focus {
   width: 100%;
   height: 100%;
 }
-
 .register_container form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: transparent;
   width: 33rem;
 }
-
 .register_container form h1 {
   color: white;
   font-size: 3rem;
   margin: 2rem 0;
 }
-
 .register_container form input {
   border: 1px solid white;
   padding: 1.5rem 1rem;
   font-size: 1.8rem;
   width: 100%;
-  -webkit-transition: 0.6s;
   transition: 0.6s;
   color: white;
   margin: 1rem 0;
   background: transparent;
   border-radius: 3rem;
 }
-
 .register_container form input:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
-
 .register_container form .form_btn {
   max-width: 17rem;
   font-size: 2rem;
@@ -999,7 +783,6 @@ select:-webkit-autofill:focus {
   padding: 1rem 2rem;
   color: white;
 }
-
 .register_container i {
   position: absolute;
   top: 2%;
@@ -1007,11 +790,9 @@ select:-webkit-autofill:focus {
   color: white;
   font-size: 3rem;
 }
-
 .register_container i:hover {
   cursor: pointer;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 @media only screen and (max-width: 380px) {
@@ -1019,18 +800,10 @@ select:-webkit-autofill:focus {
     width: 90%;
   }
 }
-
 .sign_in_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-transition: 0.5s;
+  justify-content: center;
+  align-items: center;
   transition: 0.5s;
   position: fixed;
   background-color: black;
@@ -1040,64 +813,44 @@ select:-webkit-autofill:focus {
   width: 100%;
   height: 100%;
 }
-
 .sign_in_container form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   background: transparent;
   width: 33rem;
 }
-
 .sign_in_container form h3 {
   color: white;
   font-size: 1.7rem;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   font-weight: 100;
   margin: 2rem 0;
   cursor: pointer;
 }
-
 .sign_in_container form h3:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
-
 .sign_in_container form h1 {
   color: white;
   font-size: 3rem;
   margin: 2rem 0;
 }
-
 .sign_in_container form input {
   border: 1px solid white;
   padding: 1.5rem 1rem;
   font-size: 1.8rem;
   width: 100%;
-  -webkit-transition: 0.6s;
   transition: 0.6s;
   color: white;
   margin: 1rem 0;
   background: transparent;
   border-radius: 3rem;
 }
-
 .sign_in_container form input:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
-
 .sign_in_container i {
   position: absolute;
   top: 2%;
@@ -1105,11 +858,9 @@ select:-webkit-autofill:focus {
   color: white;
   font-size: 3rem;
 }
-
 .sign_in_container i:hover {
   cursor: pointer;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .form_btn {
@@ -1126,9 +877,7 @@ select:-webkit-autofill:focus {
     width: 90%;
   }
 }
-
 #alert_container {
-  -webkit-transition: 0.5s;
   transition: 0.5s;
   position: fixed;
   z-index: 2354;
@@ -1139,35 +888,23 @@ select:-webkit-autofill:focus {
   border-radius: 48px 10px 48px 10px;
   left: 50%;
   top: -50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   color: white;
   letter-spacing: 0.2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
-
 #alert_container:hover {
   background-color: #000000e3;
 }
-
 #alert_container h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
   color: white;
   letter-spacing: 0.2rem;
 }
-
 #alert_container .alert {
   width: 100%;
   font-size: 1.5rem;
@@ -1175,7 +912,6 @@ select:-webkit-autofill:focus {
   color: white;
   letter-spacing: 0.2rem;
 }
-
 #alert_container span {
   font-size: 2rem;
   position: absolute;
@@ -1192,15 +928,9 @@ select:-webkit-autofill:focus {
     min-width: 90%;
   }
 }
-
 .main_father {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   width: 100%;
   min-height: 100vh;
 }
@@ -1210,7 +940,7 @@ footer {
 }
 
 .z_extra_high {
-  z-index: 3434345345345345345345345345345 !important;
+  z-index: 3434345345345345700000000000000 !important;
 }
 
 @media only screen and (min-width: 1400px) and (max-width: 1500px) {
@@ -1218,82 +948,70 @@ footer {
     font-size: 65%;
   }
 }
-
 @media only screen and (max-width: 600px) {
   #empty {
     font-size: 8rem;
   }
 }
-
 @media only screen and (max-width: 500px) {
   #empty {
     font-size: 6rem;
   }
+
   #footer h3 {
     font-size: 1.5rem;
   }
 }
-
 @media only screen and (max-width: 350px) {
   #empty {
     font-size: 5rem;
   }
 }
-
 @media only screen and (max-width: 280px) {
   #empty {
     font-size: 3rem;
   }
 }
-
 @media only screen and (min-width: 1501px) and (max-width: 1700px) {
   html {
     font-size: 75%;
   }
 }
-
 @media only screen and (min-width: 1701px) and (max-width: 1900px) {
   html {
     font-size: 80%;
   }
 }
-
 @media only screen and (min-width: 1901px) and (max-width: 2100px) {
   html {
     font-size: 90%;
   }
 }
-
 @media only screen and (min-width: 2101px) and (max-width: 2400px) {
   html {
     font-size: 100%;
   }
 }
-
 @media only screen and (min-width: 2401px) and (max-width: 2700px) {
   html {
     font-size: 130%;
   }
 }
-
 @media only screen and (min-width: 2701px) and (max-width: 4000px) {
   html {
     font-size: 150%;
   }
 }
-
 @media only screen and (min-width: 4001px) and (max-width: 5000px) {
   html {
     font-size: 200%;
   }
 }
-
 @media only screen and (min-width: 5001px) and (max-width: 8000px) {
   html {
     font-size: 230%;
   }
 }
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:active,
@@ -1306,4 +1024,8 @@ input:-webkit-autofill:focus {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-/*# sourceMappingURL=style.css.map */
+
+#theme_outer i {
+  top: 3% !important;
+  right: 1% !important;
+}/*# sourceMappingURL=style.css.map */

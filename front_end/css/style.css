@@ -27,11 +27,11 @@ html {
 }
 
 ::-moz-selection {
-  background: #00000002;
+  background: rgba(0, 0, 0, 0.0078431373);
 }
 
 ::selection {
-  background: #00000002;
+  background: rgba(0, 0, 0, 0.0078431373);
 }
 
 html, body {
@@ -227,7 +227,7 @@ html, body {
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
   background: transparent;
-  box-shadow: 1px 2px 12px black, inset 1px 3px 12px #31c5fe14;
+  box-shadow: 1px 2px 12px black, inset 1px 3px 12px rgba(49, 197, 254, 0.0784313725);
   color: rgba(255, 255, 255, 0.514);
 }
 #ul input::-moz-placeholder {
@@ -256,11 +256,9 @@ html, body {
   .hidden {
     opacity: 0;
   }
-
   .dul_none {
     display: none !important;
   }
-
   #navbar {
     flex-direction: column;
   }
@@ -276,7 +274,6 @@ html, body {
   #navbar ul input {
     width: 90%;
   }
-
   .logo_bars {
     width: 100%;
     justify-content: flex-start;
@@ -295,18 +292,18 @@ html, body {
   border-radius: 10px;
   font-size: 3rem;
   background: rgba(0, 0, 0, 0.494);
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 1rem 2rem;
 }
 
 .note_section_header {
   color: white;
   font-size: 5rem;
-  box-shadow: 1px 0px 12px black, inset 0px 0px 94px #000000ad;
+  box-shadow: 1px 0px 12px black, inset 0px 0px 94px rgba(0, 0, 0, 0.6784313725);
   width: 100%;
   margin-bottom: 2rem;
-  border-bottom: 1px solid #ffffff57;
-  border-top: 1px solid #ffffff57;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3411764706);
+  border-top: 1px solid rgba(255, 255, 255, 0.3411764706);
   transition: 0.5s;
 }
 .note_section_header:hover {
@@ -342,17 +339,17 @@ html, body {
 }
 
 .note {
-  box-shadow: 0px 0px 1px #000000f7, inset 1px 0px 28px #000000;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.968627451), inset 1px 0px 28px #000000;
   transition: 0.5s;
   width: 23rem;
   border-radius: 5px;
   padding: 1rem 1rem;
   height: 17.3rem;
-  background: #156b6b0d;
+  background: rgba(21, 107, 107, 0.0509803922);
   word-break: break-all;
   position: relative;
   overflow: hidden;
-  border: 1px #41414138;
+  border: 1px rgba(65, 65, 65, 0.2196078431);
   border-style: solid;
   margin: 1rem;
 }
@@ -373,7 +370,7 @@ html, body {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #000000af;
+  background-color: rgba(0, 0, 0, 0.6862745098);
   z-index: 2;
   opacity: 0;
   transition: 0.5s;
@@ -563,11 +560,11 @@ html, body {
 }
 
 #input_title, .read_content, .read_title, #textarea {
-  background: #fffbfb14;
+  background: rgba(255, 251, 251, 0.0784313725);
 }
 
 .read_title {
-  border-bottom: 1px solid #ffffff2e !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1803921569) !important;
 }
 
 /* scroll bar  */
@@ -681,7 +678,7 @@ html, body {
   top: 0;
   left: 0;
   position: absolute;
-  box-shadow: 1px 0px 12px #00bdf3b8, inset 0px 0px 19px #000000;
+  box-shadow: 1px 0px 12px rgba(0, 189, 243, 0.7215686275), inset 0px 0px 19px #000000;
   z-index: 33;
 }
 
@@ -693,7 +690,6 @@ html, body {
     background: none;
     z-index: 23;
   }
-
   ::-webkit-scrollbar {
     width: 0px;
   }
@@ -708,7 +704,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: none !important;
-  -webkit-text-fill-color: white;
+  -webkit-text-fill-color: rgb(255, 255, 255);
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -722,15 +718,12 @@ select:-webkit-autofill:focus {
   #ul input {
     font-size: 1.1rem;
   }
-
   #logo {
     width: 3rem;
   }
-
   #add_note_btn {
     font-size: 2.3rem;
   }
-
   .note_section_header {
     color: white;
     font-size: 3rem;
@@ -884,7 +877,7 @@ select:-webkit-autofill:focus {
   max-width: 500px;
   min-width: 300px;
   padding: 3rem;
-  background-color: #000000bf;
+  background-color: rgba(0, 0, 0, 0.7490196078);
   border-radius: 48px 10px 48px 10px;
   left: 50%;
   top: -50%;
@@ -897,7 +890,7 @@ select:-webkit-autofill:focus {
   flex-direction: column;
 }
 #alert_container:hover {
-  background-color: #000000e3;
+  background-color: rgba(0, 0, 0, 0.8901960784);
 }
 #alert_container h1 {
   font-size: 2rem;
@@ -957,7 +950,6 @@ footer {
   #empty {
     font-size: 6rem;
   }
-
   #footer h3 {
     font-size: 1.5rem;
   }
@@ -1017,9 +1009,9 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:active,
 input:-webkit-autofill:focus {
   background-color: rgba(255, 255, 255, 0) !important;
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
   border: 1px solid white !important;
-  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+  -webkit-box-shadow: 0 0 0 1000px rgb(255, 255, 255) inset !important;
   -webkit-text-fill-color: #2a2929 !important;
   -webkit-transition: 0.5s;
   transition: 0.5s;

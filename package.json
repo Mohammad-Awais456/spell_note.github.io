@@ -4,11 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    
     "start": "node index.js",
     "test": "echo \"Error: no0 test specified\" && exit 1"
-
-
   },
   "repository": {
     "type": "git",
@@ -24,6 +21,7 @@
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "cookieparser": "^0.1.0",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "hbs": "^4.2.0",

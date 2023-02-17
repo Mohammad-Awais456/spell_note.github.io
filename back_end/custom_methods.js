@@ -122,18 +122,31 @@ async function send_mail(reciver_address, code,subject) {
     });
 
     var mailOptions = {
-        from: 'mohammadawais4667@gmail.com',
+        from:{
+            name: "Note-Making-App",
+            address: 'mohammadawais4667@gmail.com'
+          },
         to: reciver_address,
         subject: subject,
         text: "6 digit code = " + code
     };
+    await new Promise((resolve, reject) => {
+        transporter.sendMail(mailOptions, function (error, info) {
+          if (error) {
+            console.error(error);
+            reject(error);
+             
+    
+          }
+          resolve(info);
+        });
+      });
+    // transporter.sendMail(mailOptions, function (error, info) {
+    //     if (error) {
+    //        console.log(error);
 
-    transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-           console.log(error);
-
-        }
-    });
+    //     }
+    // });
 
 }
 //**************************************************** */
